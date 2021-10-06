@@ -32,12 +32,6 @@ Route::get('/', function () {
     $futureWeather = $responseFuture->json();
 
     return view('welcome', compact('currentWeather', 'futureWeather'))->with('date', $date)->with('day', $day);
-    // return view('welcome')->with(compact('currentWeather'))->with(compact('futureWeather'));
-
-    // return view('welcome', [
-    //     'currentWeather' -> $response->json(),
-    //     'futureWeather' -> $responseFuture->json(),
-    // ]);
 });
 
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->middleware(['auth'])->name('home');
@@ -45,7 +39,6 @@ Route::get('/home', 'App\Http\Controllers\HomeController@index')->middleware(['a
 require __DIR__.'/auth.php';
 
 // Auth::routes();
-
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 /*Controller Resources*/
